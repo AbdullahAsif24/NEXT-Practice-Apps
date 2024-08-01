@@ -28,11 +28,11 @@ export default function Home() {
       {/* <CounterFunction count={0} /> */}
 
       {/* login&signup  */}
-      <MainLoginFunc/>
+      {/* <MainLoginFunc/> */}
 
 
       {/* Products Filter */}
-      {/* <MainProductsFilter/> */}
+      <MainProductsFilter/>
       
 
     </div>
