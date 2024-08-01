@@ -23,17 +23,18 @@ export default function Home() {
       <h1 className="font-bold text-xl text-center">Components</h1>
       <br />
       <br />
+
+      {/* Counter */}
       {/* <CounterFunction count={0} /> */}
 
-      {/* login&signup */}
-      {/* <MainLoginFunc/>
-      <br />
-      <br /> */}
+      {/* login&signup  */}
+      <MainLoginFunc/>
+
 
       {/* Products Filter */}
-      <MainProductsFilter/>
+      {/* <MainProductsFilter/> */}
       
 
     </div>
   )
-}
+} 

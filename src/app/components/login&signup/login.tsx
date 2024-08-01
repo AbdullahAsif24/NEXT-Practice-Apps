@@ -29,7 +29,7 @@ const dataArr: dataobjType[] = [
 
 type loginPageType = {
     authenticate: (fn: boolean) => void;
-    setAuthenticateUser: (fn: {}) => void;
+    setAuthenticateUser: (fn: dataobjType) => void;
 }
 
 
