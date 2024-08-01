@@ -11,6 +11,30 @@ export default function Home() {
     setuserName(e.target.value)
   }
 
+  // for rendering component which user selected
+  const componentsList = [
+    'Counter',
+    'Products Filter',
+    'Login'
+  ]
+
+  const [filteredComponent, setfilteredComponent] = useState<string[]>(['Counter'])
+  const componentRender = (compo: string) => {
+    setfilteredComponent(componentsList.filter((component) => (component === compo)))
+    console.log(filteredComponent);
+  }
+
+  function componentReturn() {
+    switch (filteredComponent[0]) {
+      case 'Counter':
+        return <CounterFunction count={0} />
+      case 'Products Filter':
+        return <MainProductsFilter />
+      case 'Login':
+        return <MainLoginFunc />
+    }
+  }
+
   return (
     <div className="p-2 bg-zinc-500 h-[100vh]">
 
@@ -24,16 +48,20 @@ export default function Home() {
       <br />
       <br />
 
-      {/* Counter */}
-      {/* <CounterFunction count={0} /> */}
 
-      {/* login&signup  */}
-      {/* <MainLoginFunc/> */}
+      {
+        componentsList.map((component, index) => (
+          <button key={component + index} type="button" style={{ background: '#0035ffad', border: '1px solid black', color: 'white', borderRadius: '5px', padding: "5px", margin: "2px" }} onClick={() => { componentRender(component) }}>{component}</button>
+        ))
+      }
 
+      <br />
+      <br />
 
-      {/* Products Filter */}
-      <MainProductsFilter/>
-      
+      {/* component render which user selected */}
+      {
+        componentReturn()
+      }
 
     </div>
   )
