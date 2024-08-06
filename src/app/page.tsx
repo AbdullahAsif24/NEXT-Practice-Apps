@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from "react";
-import CounterFunction from "./components/CounterApp/Counter";
-import MainProductsFilter from "./components/ProductsFilter/MainFilter";
-import MainLoginFunc from "./components/login&signup/MainLogin";
+// import CounterFunction from "../components/CounterApp/Counter";
+// import MainProductsFilter from "../components/ProductsFilter/MainFilter";
+// import MainLoginFunc from "../components/login&signup/MainLogin";
+import Link from "next/link";
 
 export default function Home() {
   const [userName, setuserName] = useState("")
@@ -12,31 +13,30 @@ export default function Home() {
   }
 
   // for rendering component which user selected
-  const componentsList = [
-    'Counter',
-    'Products Filter',
-    'Login'
-  ]
+  // const componentsList = [
+  //   'Counter',
+  //   'Products Filter',
+  //   'Login'
+  // ]
 
-  const [filteredComponent, setfilteredComponent] = useState<string[]>(['Counter'])
-  const componentRender = (compo: string) => {
-    setfilteredComponent(componentsList.filter((component) => (component === compo)))
-    console.log(filteredComponent);
-  }
+  // const [filteredComponent, setfilteredComponent] = useState<string[]>(['Counter'])
+  // const componentRender = (compo: string) => {
+  //   setfilteredComponent(componentsList.filter((component) => (component === compo)))
+  // }
 
-  function componentReturn() {
-    switch (filteredComponent[0]) {
-      case 'Counter':
-        return <CounterFunction count={0} />
-      case 'Products Filter':
-        return <MainProductsFilter />
-      case 'Login':
-        return <MainLoginFunc />
-    }
-  }
+  // function componentReturn() {
+  //   switch (filteredComponent[0]) {
+  //     case 'Counter':
+  //       return <CounterFunction count={0} />
+  //     case 'Products Filter':
+  //       return <MainProductsFilter />
+  //     case 'Login':
+  //       return <MainLoginFunc />
+  //   }
+  // }
 
   return (
-    <div className="p-2 bg-zinc-500 h-[100vh]">
+    <div>
 
       <h1 className="font-bold text-xl">{userName.length > 2 ? ('Welcome ' + userName) : ('Please enter your name')}</h1>
 
@@ -50,18 +50,29 @@ export default function Home() {
 
 
       {
-        componentsList.map((component, index) => (
-          <button key={component + index} type="button" style={{ background: '#0035ffad', border: '1px solid black', color: 'white', borderRadius: '5px', padding: "5px", margin: "2px" }} onClick={() => { componentRender(component) }}>{component}</button>
-        ))
+        // componentsList.map((component, index) => (
+        //   <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" onClick={() => { componentRender(component) }} key={component + index} >{component}</button>
+        // ))
       }
-
-      <br />
-      <br />
-
       {/* component render which user selected */}
       {
-        componentReturn()
+        // componentReturn()
       }
+
+      <Link href={"./counter"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Counter App</button>
+      </Link>
+      <br />
+      <Link href={"./login"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Login App</button>
+      </Link>
+      <br />
+      <Link href={"./filter"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Product Filter App</button>
+      </Link>
+
+
+      
 
     </div>
   )
