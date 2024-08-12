@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { productItemType } from "./productItemType";
 import Product from "./products";
 
@@ -7,11 +8,11 @@ type AllProductsFuncType = {
 }
 
 export default function AllProductsFunc({productsList, selectedCateg}:AllProductsFuncType) {
-    const filteredProducts = selectedCateg === 'All'? productsList: productsList.filter(product => product.category === selectedCateg);
+    let filteredProducts = selectedCateg === 'All'? productsList: productsList.filter(product => product.category === selectedCateg);
 
     return (
         <>
-            <table>
+            <table className="ml-2">
                 <thead>
                     <tr>
                         <th style={{ border: '1px solid black' }}>serial Number</th>

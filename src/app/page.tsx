@@ -48,6 +48,19 @@ export default function Home() {
       <br />
       <br />
 
+      <Link href={"./counter"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Counter App</button>
+      </Link>
+      <Link href={"./login"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Login App</button>
+      </Link>
+      <Link href={"./filter"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Product Filter App</button>
+      </Link>
+      <Link href={"./todoapp"}>
+        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Todo App</button>
+      </Link>
+      
 
       {
         // componentsList.map((component, index) => (
@@ -58,19 +71,6 @@ export default function Home() {
       {
         // componentReturn()
       }
-
-      <Link href={"./counter"}>
-        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Counter App</button>
-      </Link>
-      <br />
-      <Link href={"./login"}>
-        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Login App</button>
-      </Link>
-      <br />
-      <Link href={"./filter"}>
-        <button className="mx-1 mt-1 focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900" >Product Filter App</button>
-      </Link>
-
 
       
 

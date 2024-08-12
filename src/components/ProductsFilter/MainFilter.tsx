@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CategoriesFunc from "./categories";
 import AllProductsFunc from "./Allproducts";
 
@@ -8,19 +8,19 @@ const productsList = [
   {
     serialNum: 1,
     name: "Iphone",
-    price: 12,
+    price: 121,
     category: "Mobile Phone",
   },
   {
     serialNum: 2,
     name: "MTJ",
-    price: 13,
+    price: 113,
     category: "Cloths",
   },
   {
     serialNum: 3,
     name: "Tesla Cybertruck",
-    price: 35,
+    price: 235,
     category: "Cars",
   },
   {
