@@ -21,13 +21,7 @@ export default function Home() {
         setTodos([...todosClone]);
     }
 
-    const saveEditedTodo = (updatedTodo: string) => {
-        console.log(updatedTodo);
-        let todosClone = [...todos];
-        todosClone.splice(editIndex, 1, updatedTodo);
-        setTodos([...todosClone]);
-        setEditIndex(-1);
-    }
+   
 
 
     useEffect(() => {
@@ -37,22 +31,16 @@ export default function Home() {
     return (
         <>
 
-            {
-                editIndex === -1 ?
-                    <TodoInput
-                        addNewTodo={addNewTodo}
-                    /> :
-                    <TodoEdit
-                        editedTodo={todos[editIndex]}
-                        saveEditedTodo={saveEditedTodo}
-                    />
-
-            }
+            <TodoInput
+                addNewTodo={addNewTodo}
+            />
 
             <TodoList
                 todos={todos}
                 deleteTodo={deleteTodo}
                 setEditIndex={setEditIndex}
+                editIndex={editIndex}
+                setTodos={setTodos}
             />
         </>
     )
